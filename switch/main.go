@@ -449,4 +449,6 @@ whatAmI:
 - prints message based on datatype
 
 This is Go's way of doing runtime type checking.
+switch without variable or expression is treated as 
+switch true
 */

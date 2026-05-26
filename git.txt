@@ -1,0 +1,361 @@
+# ==========================================
+# GIT INITIALIZATION
+# ==========================================
+
+git init
+
+# Initializes a new Git repository.
+# Creates hidden .git/ folder.
+# Turns normal folder into Git-tracked project.
+
+
+# ==========================================
+# GIT STATUS
+# ==========================================
+
+git status
+
+# Shows:
+# - modified files
+# - staged files
+# - untracked files
+# - current branch
+
+
+# ==========================================
+# STAGE FILES
+# ==========================================
+
+git add .
+
+# Adds ALL current changes recursively to staging area.
+
+git add filename
+
+# Adds specific file only.
+
+git add foldername/
+
+# Adds specific folder only.
+
+
+# ==========================================
+# COMMIT CHANGES
+# ==========================================
+
+git commit -m "message"
+
+# Creates snapshot of staged changes.
+
+# -m flag means:
+# message written inline.
+
+
+# ==========================================
+# VIEW COMMIT HISTORY
+# ==========================================
+
+git log --oneline
+
+# Shows compact commit history.
+
+# --oneline:
+# short hash + commit message.
+
+
+# ==========================================
+# VIEW CODE DIFFERENCES
+# ==========================================
+
+git diff
+
+# Shows unstaged code changes.
+
+git diff --staged
+
+# Shows staged changes.
+
+
+# ==========================================
+# CONNECT TO GITHUB
+# ==========================================
+
+git remote add origin REPOSITORY_URL
+
+# Connects local repo to GitHub repo.
+
+# origin:
+# nickname for remote repository.
+
+
+# ==========================================
+# VIEW CONNECTED REMOTES
+# ==========================================
+
+git remote -v
+
+# Shows remote repository URLs.
+
+# -v means verbose.
+
+
+# ==========================================
+# RENAME CURRENT BRANCH
+# ==========================================
+
+git branch -M main
+
+# Renames current branch to main.
+
+# -M means force rename.
+
+
+# ==========================================
+# PUSH TO GITHUB
+# ==========================================
+
+git push -u origin main
+
+# Uploads local commits to GitHub.
+
+# -u means:
+# set upstream tracking.
+
+# After first time:
+# git push becomes enough.
+
+
+git push
+
+# Pushes commits to already linked remote branch.
+
+
+# ==========================================
+# DOWNLOAD LATEST GITHUB CHANGES
+# ==========================================
+
+git pull
+
+# Downloads latest remote changes
+# and merges into local repository.
+
+
+# ==========================================
+# GIT CONFIGURATION
+# ==========================================
+
+git config --global user.name "Your Name"
+
+# Sets Git username globally.
+
+git config --global user.email "your_email@example.com"
+
+# Sets Git email globally.
+
+
+# ==========================================
+# VIEW GIT CONFIG
+# ==========================================
+
+git config --list
+
+# Displays all Git configurations.
+
+
+# ==========================================
+# STORE GITHUB CREDENTIALS
+# ==========================================
+
+git config --global credential.helper store
+
+# Stores GitHub PAT locally.
+# Prevents repeated authentication prompts.
+
+
+# ==========================================
+# VERIFY CURRENT BRANCH
+# ==========================================
+
+git branch
+
+# Shows all local branches.
+# * indicates current branch.
+
+
+# ==========================================
+# CREATE NEW BRANCH
+# ==========================================
+
+git branch branch-name
+
+# Creates new branch only.
+# Does NOT switch into it.
+
+
+# ==========================================
+# SWITCH BRANCH
+# ==========================================
+
+git checkout branch-name
+
+# Switches to existing branch.
+
+
+# ==========================================
+# CREATE + SWITCH BRANCH
+# ==========================================
+
+git checkout -b branch-name
+
+# Creates new branch
+# AND immediately switches into it.
+
+# -b means create branch.
+
+
+# ==========================================
+# PUSH NEW BRANCH TO GITHUB
+# ==========================================
+
+git push -u origin branch-name
+
+# Uploads branch to GitHub.
+
+# -u sets upstream tracking.
+
+
+# ==========================================
+# MERGE BRANCH
+# ==========================================
+
+git merge branch-name
+
+# Merges specified branch
+# into current branch.
+
+# Usually:
+# switch to main first
+# then merge feature branch.
+
+
+# ==========================================
+# DELETE LOCAL BRANCH
+# ==========================================
+
+git branch -d branch-name
+
+# Deletes local branch safely.
+
+# -d means delete.
+
+
+# ==========================================
+# FORCE DELETE BRANCH
+# ==========================================
+
+git branch -D branch-name
+
+# Force deletes branch
+# even if unmerged.
+
+# Dangerous if work not saved.
+
+
+# ==========================================
+# SHOW CURRENT REMOTE DETAILS
+# ==========================================
+
+git remote show origin
+
+# Detailed info about connected GitHub remote.
+
+
+# ==========================================
+# CLONE REPOSITORY
+# ==========================================
+
+git clone REPOSITORY_URL
+
+# Downloads complete GitHub repository locally.
+
+
+# ==========================================
+# REMOVE FILE FROM STAGING
+# ==========================================
+
+git restore --staged filename
+
+# Removes file from staging area
+# without deleting file.
+
+
+# ==========================================
+# DISCARD LOCAL CHANGES
+# ==========================================
+
+git restore filename
+
+# Restores file to last committed state.
+
+
+# ==========================================
+# SHOW HIDDEN FILES
+# ==========================================
+
+ls -a
+
+# Useful for seeing hidden .git folder.
+
+
+# ==========================================
+# DAILY WORKFLOW
+# ==========================================
+
+git pull
+
+git status
+
+git add .
+
+git commit -m "message"
+
+git push
+
+
+# ==========================================
+# BRANCHING WORKFLOW
+# ==========================================
+
+git checkout -b arrays-practice
+
+# Create and switch to feature branch.
+
+
+# Work normally:
+# create files
+# edit code
+# run Go programs
+
+
+git add .
+
+git commit -m "Practiced arrays"
+
+git push -u origin arrays-practice
+
+# Upload feature branch to GitHub.
+
+
+git checkout main
+
+# Return to main branch.
+
+
+git merge arrays-practice
+
+# Merge feature branch into main.
+
+
+git branch -d arrays-practice
+
+# Delete branch after successful merge.
